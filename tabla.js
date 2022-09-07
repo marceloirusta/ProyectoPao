@@ -58,11 +58,10 @@ window.addEventListener('load', () => {
         listaProductosAgregados.appendChild(productoAgregadoTR)
 
         
-        console.log(productoAgregadoTR)
+        accionI.addEventListener('click', (e) => {
+            listaProductosAgregados.removeChild(productoAgregadoTR)
 
-        console.log(selectedProduct.value);
-
-        console.log(listaProductosEnDroplist)
+        })
         
     })
 })
