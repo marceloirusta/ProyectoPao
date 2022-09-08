@@ -77,47 +77,37 @@
             </tbody>
             <tr>
                 <td>
-                    <p class="my-2">
-                        <div class="row">
-                            <input class="form-control d-flex align-items-center my-2 ms-3 w-50" id = "codProd" name ="codProd" type = "text" placeholder = "Codigo Producto" value = "" onchange="getProduct()"/>
-                        </div>
-                    </p>
-
-
+                    <input class="form-control d-flex align-items-center my-2 ms-3 w-50" id = "codProd" name ="codProd" type = "text" placeholder = "Codigo Producto" value = "" onchange="getProduct()"/>
                 </td>
                 <td>
-                    <p class="my-2">
-                        <div class="row">
-                            <select class="form-control d-flex align-items-center my-2 ms-3 w-75" name="product" id="selectedProduct" onchange="getNumber()">
-                            </select>
+                    <select class="form-control d-flex align-items-center my-2 ms-3 w-75" name="product" id="selectedProduct" onchange="getNumber()">
+                    </select>
 
-                            <script type="text/javascript">
-                                var prodArr = ['Producto1', 'Producto2', 'Producto3', 'Producto4', 'Producto5', 'Producto6', 'Producto7', 'Producto8', 'Producto9', 'Producto10'];
-                                var codProdArr = ['CodProd1', 'CodProd2', 'CodProd3', 'CodProd4', 'CodProd5', 'CodProd6', 'CodProd7', 'CodProd8', 'CodProd9', 'CodProd10'];
-                                var arraylength = prodArr.length;
-                                var i;
-                                var options = '';
-                              
-                                options += '<option value="defualt">Seleccione un producto</option>';
-                                for(i = 0; i < arraylength; i++)
-                                  options += '<option value="'+prodArr[i]+'">'+prodArr[i]+'</option>';
-                                
-                                document.getElementById('selectedProduct').innerHTML = options.toString();
-                                document.getElementById('selectedProduct').selectedIndex = 0;
-                                getNumber();
-                                
-                                function getNumber(){
-                                  var index = document.getElementById('selectedProduct').selectedIndex;
-                                  
-                                  if(index == 0){
-                                      document.getElementById('codProd').value = "";
-                                  } else {
-                                      document.getElementById('codProd').value = codProdArr[index-1];
-                                  }
-                                }
-                               </script>
-                        </div>
-                    </p>
+                    <script type="text/javascript">
+                        var prodArr = ['Producto1', 'Producto2', 'Producto3', 'Producto4', 'Producto5', 'Producto6', 'Producto7', 'Producto8', 'Producto9', 'Producto10'];
+                        var codProdArr = ['CodProd1', 'CodProd2', 'CodProd3', 'CodProd4', 'CodProd5', 'CodProd6', 'CodProd7', 'CodProd8', 'CodProd9', 'CodProd10'];
+                        var arraylength = prodArr.length;
+                        var i;
+                        var options = '';
+                        
+                        options += '<option value="defualt">Seleccione un producto</option>';
+                        for(i = 0; i < arraylength; i++)
+                            options += '<option value="'+prodArr[i]+'">'+prodArr[i]+'</option>';
+                        
+                        document.getElementById('selectedProduct').innerHTML = options.toString();
+                        document.getElementById('selectedProduct').selectedIndex = 0;
+                        getNumber();
+                        
+                        function getNumber(){
+                            var index = document.getElementById('selectedProduct').selectedIndex;
+                            
+                            if(index == 0){
+                                document.getElementById('codProd').value = "";
+                            } else {
+                                document.getElementById('codProd').value = codProdArr[index-1];
+                            }
+                        }
+                        </script>
                 </td>
                 <td></td>
                 <td><i class="fa-solid fa-check iconCheck" id="agregarProductoBt"></i></td>

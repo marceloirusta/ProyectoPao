@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
 
         //codigo de producto
         const codProductoP = document.createElement("input")
-        codProductoP.setAttribute("type", "hidden")
+        codProductoP.setAttribute("type", "text")
         codProductoP.setAttribute("value", codigo)
         codProductoP.classList.add("form-control", "d-flex", "align-items-center", "my-2", "ms-3", "inputForm", "w-50")
         codProductoP.setAttribute("readonly", "")
