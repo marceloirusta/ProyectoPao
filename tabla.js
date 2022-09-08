@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const selectedProduct = document.querySelector("#selectedProduct");
     const agregarProduct = document.querySelector("#agregarProductoBt");
     const listaProductosAgregados = document.querySelector("#tableBody");
-    const listaProductosEnDroplist = document.querySelector("#datalistOptions").getElementsByTagName("option")
+   // const listaProductosEnDroplist = document.querySelector("#datalistOptions").getElementsByTagName("option")
 
 
     //TO DO : hacer un condicional grande aca, 
@@ -52,25 +52,23 @@ window.addEventListener('load', () => {
 
         //codigo de producto
         const codProductoP = document.createElement("input")
-        codProductoP.setAttribute("type", "text")
+        codProductoP.setAttribute("type", "hidden")
         codProductoP.setAttribute("value", "producto.codProducto")
-        codProductoP.classList.add("form-control", "d-flex", "align-items-center", "text-muted", "my-2", "ms-3", "inputForm", "w-50")
+        codProductoP.classList.add("form-control", "d-flex", "align-items-center", "my-2", "ms-3", "inputForm", "w-50")
         codProductoP.setAttribute("readonly", "")
-
-        console.log(codProductoP);
 
         //descripcion de producto
         const descripcionP = document.createElement("input")
         descripcionP.setAttribute("type", "text")
         descripcionP.setAttribute("value", "producto.descripcionProducto")
-        descripcionP.classList.add("form-control", "d-flex", "align-items-center", "text-muted", "my-2", "ms-3", "inputForm", "w-50")
+        descripcionP.classList.add("form-control", "d-flex", "align-items-center", "my-2", "ms-3", "inputForm", "w-50")
         descripcionP.setAttribute("readonly", "")
 
         //Precio de producto
         const precioSpan = document.createElement("input")
         precioSpan.setAttribute("type", "text")
         precioSpan.setAttribute("value", "producto.precioProducto")
-        precioSpan.classList.add("form-control", "d-flex", "align-items-center", "text-muted", "my-2", "ms-3", "inputForm", "w-50")
+        precioSpan.classList.add("form-control", "d-flex", "align-items-center", "my-2", "ms-3", "inputForm", "w-50")
         precioSpan.setAttribute("readonly", "")
 
         //Icono borrar

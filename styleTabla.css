@@ -13,15 +13,13 @@
     background-color: transparent;
     resize: none;
     outline: none;
-    color: azure;
     }
 
 .inputForm:focus{
     border: none;
     background-color: transparent;
     resize: none;
-    outline: none;
-    color: azure; 
+    outline: none; 
 }
 
 

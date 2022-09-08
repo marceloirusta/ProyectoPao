@@ -11,6 +11,7 @@
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/d23d0088c3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styleTabla.css">
+    
     <title>Document</title>
 </head>
 <body>
@@ -28,29 +29,13 @@
             <tbody id="tableBody">
                 <tr>
                     <td>
-                        <input type="text" value="producto.codProducto" class="form-control d-flex align-items-center text-muted my-2 ms-3 inputForm w-50" readonly>
+                        <input type="hidden" value="producto.codProducto" class="form-control d-flex align-items-center my-2 ms-3 inputForm w-50" readonly><p>ahiasd</p>
                     </td>
                     <td>
-                        <input type="text" value="producto.descripcion" class="form-control d-flex align-items-center text-muted my-2 ms-3 inputForm w-50" readonly>
+                        <input type="hidden" value="producto.descripcion" class="form-control d-flex align-items-center my-2 ms-3 inputForm w-50" readonly>Descripcion de producto</input>
                     </td>
                     <td>
-                        <input type="text" value="producto.precio" class="form-control d-flex align-items-center text-muted my-2 ms-3 inputForm w-50" readonly>
-                    </td>
-                    <td>
-                        <i class="fa-solid fa-xmark my-2 borrarProducto iconDelete"></i>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <p class="d-flex align-items-center text-muted my-2 ms-3">19678UC</p>
-                    </td>
-                    <td>
-                        <p class="text-muted my-2">Mantenimiento JARDINERO</p>
-                    </td>
-                    <td>
-                        <span class="text-muted text-end my-2">1000$</span>
+                        <input type="hidden" value="producto.precio" class="form-control d-flex align-items-center my-2 ms-3 inputForm w-50" readonly>5000$</input>
                     </td>
                     <td>
                         <i class="fa-solid fa-xmark my-2 borrarProducto iconDelete"></i>
@@ -60,13 +45,29 @@
 
                 <tr>
                     <td>
-                        <p class="d-flex align-items-center text-muted my-2 ms-3">19678UD</p>
+                        <p class="d-flex align-items-center my-2 ms-3">19678UC</p>
                     </td>
                     <td>
-                        <p class="text-muted my-2">Mantenimiento LIMPIEZA</p>
+                        <p class="my-2">Mantenimiento JARDINERO</p>
                     </td>
                     <td>
-                        <span class="text-muted my-2 text-end">2000$</span>
+                        <span class="text-end my-2">1000$</span>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-xmark my-2 borrarProducto iconDelete"></i>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <p class="d-flex align-items-center my-2 ms-3">19678UD</p>
+                    </td>
+                    <td>
+                        <p class="my-2">Mantenimiento LIMPIEZA</p>
+                    </td>
+                    <td>
+                        <span class="my-2 text-end">2000$</span>
                     </td>
                     <td>
                         <i class="fa-solid fa-xmark my-2 borrarProducto iconDelete"></i>
@@ -75,42 +76,46 @@
                 
             </tbody>
             <tr>
-                <td></td>
                 <td>
-                    <p class="text-muted my-2">
+                    <p class="my-2">
                         <div class="row">
-                            <input class="form-control mx-auto text-center col-lg-6" list="datalistOptions" style="width: 80%;"id="selectedProduct" placeholder="Seleccionar Producto" >
-                            <datalist style="width: 5000px;" id="datalistOptions">
-                                <option value="La Paz">
-                                <option value="Oruro">
-                                <option value="Potosi">
-                                <option value="Cochabamba">
-                                <option value="Chuquisaca">
-                                <option value="Tarija">
-                                <option value="Pando">
-                                <option value="Beni">
-                                <option value="Santa Cruz">
-                                <option value="La Paz">
-                                <option value="Oruro">
-                                <option value="Potosi">
-                                <option value="Cochabamba">
-                                <option value="Chuquisaca">
-                                <option value="Tarija">
-                                <option value="Pando">
-                                <option value="Beni">
-                                <option value="Santa Cruz">
-                                <option value="La Paz">
-                                <option value="Oruro">
-                                <option value="Potosi">
-                                <option value="Cochabamba">
-                                <option value="Chuquisaca">
-                                <option value="Tarija">
-                                <option value="Pando">
-                                <option value="Beni">
-                                <option value="Santa Cruz">
-                            </datalist>
+                            <input class="form-control d-flex align-items-center my-2 ms-3 inputForm w-50" id = "phone" name ="phone" type = "text" placeholder = "Codigo Producto" value = ""/>
+                        </div>
+                    </p>
 
-                            
+
+                </td>
+                <td>
+                    <p class="my-2">
+                        <div class="row">
+                            <select class="form-control d-flex align-items-center my-2 ms-3 w-75" name="customer" id="selectedProduct" onchange="getNumber()">
+                            </select>
+
+                            <script type="text/javascript">
+                                var customer = ['Producto1', 'Producto2', 'Producto3', 'Producto4', 'Producto5', 'Producto6', 'Producto7', 'Producto8', 'Producto9', 'Producto10'];
+                                var phone = ['CodProd1', 'CodProd2', 'CodProd3', 'CodProd4', 'CodProd5', 'CodProd6', 'CodProd7', 'CodProd8', 'CodProd9', 'CodProd10'];
+                                var arraylength = customer.length;
+                                var i;
+                                var options = '';
+                              
+                                options += '<option value="defualt">Seleccione un producto</option>';
+                                for(i = 0; i < arraylength; i++)
+                                  options += '<option value="'+customer[i]+'">'+customer[i]+'</option>';
+                                
+                                document.getElementById('selectedProduct').innerHTML = options.toString();
+                                document.getElementById('selectedProduct').selectedIndex = 0;
+                                getNumber();
+                                
+                                function getNumber(){
+                                  var index = document.getElementById('selectedProduct').selectedIndex;
+                                  
+                                  if(index == 0){
+                                      document.getElementById('phone').value = "";
+                                  } else {
+                                      document.getElementById('phone').value = phone[index-1];
+                                  }
+                                }
+                               </script>
                         </div>
                     </p>
                 </td>
@@ -124,7 +129,7 @@
             <button class="btn btn-primary" type="submit">Finalizar Facturacion</button>
         </div>
     </form>
-      <script src="tabla.js"></script>
+    <script src="tabla.js"></script>
 </body>
 
 
