@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <select id="selectProduct" name="native-select" placeholder="Seleccione un producto" data-search="true" data-silent-initial-value-set="true">
+        <select id="selectProduct" placeholder="Seleccione un producto" data-search="true" data-silent-initial-value-set="true">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
@@ -19,8 +19,14 @@
 <script src="js/virtual-select.min.js"></script>
 <script>
     VirtualSelect.init({ 
-        ele: '#selectProduct' 
+        ele: '#selectProduct'
     });
+    
+    const clearBtn = document.querySelector(".vscomp-clear-button")
+
+    window.onload = (event) => {
+        clearBtn.click()
+    }
 </script>
 
 </body>
