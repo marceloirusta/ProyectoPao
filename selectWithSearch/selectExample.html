@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/selectStyle.css">
-    <link rel="stylesheet" href="style/virtual-select.min.css">
+    <link rel="stylesheet" href="virtual-select-master/dist/virtual-select.min.css">
+    <link rel="stylesheet" href="virtual-select-master/dist/virtual-select.js">
     <title>Document</title>
 </head>
 <body>
     <div>
-        <select id="selectProduct" placeholder="Seleccione un producto" data-search="true" data-silent-initial-value-set="true">
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-        </select>
-    </div>
-<script src="js/virtual-select.min.js"></script>
-<script>
-    VirtualSelect.init({ 
-        ele: '#selectProduct'
-    });
-    
-    const clearBtn = document.querySelector(".vscomp-clear-button")
 
-    window.onload = (event) => {
-        clearBtn.click()
-    }
+        <h1 class="irusta">Marcelo</h1>
+        <div id="selectProduct"></div></div>
+<script src="virtual-select-master/dist/virtual-select.js"></script>
+<script>
+
+VirtualSelect.init({
+  ele: '#selectProduct',
+  options: [
+    { label: 'Options 1', value: '1' },
+    { label: 'Options 2', value: '2' },
+    { label: 'Options 3', value: '3' },
+  ],
+  placeholder: 'Seleccione un producto',
+  search: true
+});
+    
+    //document.querySelector("#selectProduct").reset()
+
 </script>
 
 </body>
