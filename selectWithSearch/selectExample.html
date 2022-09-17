@@ -9,25 +9,101 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-
-        <h1 class="irusta">Marcelo</h1>
-        <div id="selectProduct"></div></div>
+  <h1 class="irusta">Marcelo</h1>
+  <div id="selectProduct"></div>
+  <div id="selectID"></div>
+  <br><br><br><br>
+  <div id="selectToFillOptions"></div>
+  <div id="filledOptions"></div>
 <script src="virtual-select-master/dist/virtual-select.js"></script>
 <script>
 
 VirtualSelect.init({
   ele: '#selectProduct',
   options: [
-    { label: 'Options 1', value: '1' },
-    { label: 'Options 2', value: '2' },
-    { label: 'Options 3', value: '3' },
+    { label: 'Options 1', value: '1',customData: 'aaaa'},
+    { label: 'Options 2', value: '2'},
+    { label: 'Options 3', value: '3'},
   ],
   placeholder: 'Seleccione un producto',
-  search: true
+  search: true,
+
 });
-    
-    //document.querySelector("#selectProduct").reset()
+
+VirtualSelect.init({
+  ele: '#selectID',
+  options: [
+    { label: 'ID 1', value: '1',customData: 'aaaa'},
+    { label: 'ID 2', value: '2'},
+    { label: 'ID 3', value: '3'},
+  ],
+  placeholder: 'Seleccione un producto',
+  search: true,
+
+});
+
+VirtualSelect.init({
+  ele: '#selectToFillOptions',
+  options: [
+    { label: 'Opcion 1', value: '1'},
+    { label: 'Opcion 2', value: '2'},
+    { label: 'Opcion 3', value: '3'},
+  ],
+  placeholder: 'Seleccione un producto',
+  search: true,
+
+});
+
+VirtualSelect.init({
+  ele: '#filledOptions',
+  placeholder: 'Seleccione un producto',
+  search: true,
+
+});
+
+// Solucion para matchear el contenido del select de la derecha
+// de acuerdo a la seleccion del select de la izquierda
+const selectIzquierda = document.querySelector('#selectProduct')
+
+selectIzquierda.addEventListener('change', ()=>{
+  document.querySelector('#selectID').setValue(selectIzquierda.value);
+})
+
+
+//Solucion para generar options en el select de la derecha
+// de acuerdo a la seleccion del select de la izquierda
+const optionsFirstValue = [
+  { label: 'Options for value 1.1', value: '1' },
+  { label: 'Options for value 1.2', value: '2' },
+  { label: 'Options for value 1.3', value: '3' },
+];
+
+const optionsSecondValue = [
+  { label: 'Options for value 2.1', value: '1' },
+  { label: 'Options for value 2.2', value: '2' },
+  { label: 'Options for value 2.3', value: '3' },
+];
+
+const optionsThirdValue = [
+  { label: 'Options for value 3.1', value: '1' },
+  { label: 'Options for value 3.2', value: '2' },
+  { label: 'Options for value 3.3', value: '3' },
+];
+
+const selectIzquierdaOpciones = document.querySelector('#selectToFillOptions')
+
+selectIzquierdaOpciones.addEventListener('change', ()=>{
+
+  if(selectIzquierdaOpciones.value == 1){
+    document.querySelector('#filledOptions').setOptions(optionsFirstValue);
+  } else if(selectIzquierdaOpciones.value == 2){
+    document.querySelector('#filledOptions').setOptions(optionsSecondValue);
+  } else if(selectIzquierdaOpciones.value == 3){
+    document.querySelector('#filledOptions').setOptions(optionsThirdValue);
+  }
+  
+})
+
 
 </script>
 
