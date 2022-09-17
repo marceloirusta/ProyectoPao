@@ -21,9 +21,9 @@
 VirtualSelect.init({
   ele: '#selectProduct',
   options: [
-    { label: 'Options 1', value: '1',customData: 'aaaa'},
-    { label: 'Options 2', value: '2'},
-    { label: 'Options 3', value: '3'},
+    { label: 'Options 1', value: '1product'},
+    { label: 'Options 2', value: '2product'},
+    { label: 'Options 3', value: '3product'},
   ],
   placeholder: 'Seleccione un producto',
   search: true,
@@ -33,9 +33,9 @@ VirtualSelect.init({
 VirtualSelect.init({
   ele: '#selectID',
   options: [
-    { label: 'ID 1', value: '1',customData: 'aaaa'},
-    { label: 'ID 2', value: '2'},
-    { label: 'ID 3', value: '3'},
+    { label: 'ID 1', value: '1id'},
+    { label: 'ID 2', value: '2id'},
+    { label: 'ID 3', value: '3id'},
   ],
   placeholder: 'Seleccione un producto',
   search: true,
@@ -63,10 +63,15 @@ VirtualSelect.init({
 
 // Solucion para matchear el contenido del select de la derecha
 // de acuerdo a la seleccion del select de la izquierda
+const mapaValores = new Map();
+mapaValores.set('1product', '1id')
+mapaValores.set('2product', '2id')
+mapaValores.set('3product', '3id')
+
 const selectIzquierda = document.querySelector('#selectProduct')
 
 selectIzquierda.addEventListener('change', ()=>{
-  document.querySelector('#selectID').setValue(selectIzquierda.value);
+  document.querySelector('#selectID').setValue(mapaValores.get(selectIzquierda.value));
 })
 
 
