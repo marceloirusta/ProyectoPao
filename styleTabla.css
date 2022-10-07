@@ -22,5 +22,22 @@
     outline: none; 
 }
 
+.primeraCol{
+    width: 20%;
+}
+
+.segundaCol{
+    width: 60%;
+}
+
+.terceraCol{
+    width: 10%;
+
+}
+
+.cuartaCol{
+    width: 10%;
+}
+
 
 

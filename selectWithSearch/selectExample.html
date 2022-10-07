@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/selectStyle.css">
     <link rel="stylesheet" href="virtual-select-master/dist/virtual-select.min.css">
     <link rel="stylesheet" href="virtual-select-master/dist/virtual-select.js">
+    
     <title>Document</title>
 </head>
 <body>
@@ -63,15 +65,28 @@ VirtualSelect.init({
 
 // Solucion para matchear el contenido del select de la derecha
 // de acuerdo a la seleccion del select de la izquierda
-const mapaValores = new Map();
-mapaValores.set('1product', '1id')
-mapaValores.set('2product', '2id')
-mapaValores.set('3product', '3id')
+const mapaValoresSeleccionandoIzq = new Map();
+mapaValoresSeleccionandoIzq.set('1product', '1id')
+mapaValoresSeleccionandoIzq.set('2product', '2id')
+mapaValoresSeleccionandoIzq.set('3product', '3id')
 
+const mapaValoresSeleccionandoDer = new Map();
+mapaValoresSeleccionandoDer.set('1id', '1product')
+mapaValoresSeleccionandoDer.set('2id', '2product')
+mapaValoresSeleccionandoDer.set('3id', '3product')
 const selectIzquierda = document.querySelector('#selectProduct')
+const selectDerecha = document.querySelector('#selectID')
 
-selectIzquierda.addEventListener('change', ()=>{
-  document.querySelector('#selectID').setValue(mapaValores.get(selectIzquierda.value));
+selectIzquierda.addEventListener('change', (e)=>{
+  if(selectIzquierda.firstChild == document.activeElement){
+   selectDerecha.setValue(mapaValoresSeleccionandoIzq.get(selectIzquierda.value));
+  }
+})
+
+selectDerecha.addEventListener('change', (e)=>{
+  if(selectDerecha.firstChild == document.activeElement){
+   selectIzquierda.setValue(mapaValoresSeleccionandoDer.get(selectDerecha.value));
+  }
 })
 
 
